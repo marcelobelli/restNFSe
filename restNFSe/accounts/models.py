@@ -22,6 +22,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     inscricao_municipal = models.CharField('Inscrição Municipal', max_length=20)
     codigo_municipio = models.CharField('Código do Município', max_length=7)
 
+
     producao = models.BooleanField('Produção', default=False,
                                    help_text='Define se as requisições serão '
                                              'realizadas no servidor de produção')

@@ -1,0 +1,1 @@
+default_app_config = 'restNFSe.accounts.apps.AccountsConfig'
