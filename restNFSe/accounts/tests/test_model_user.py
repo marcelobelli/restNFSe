@@ -37,3 +37,7 @@ class UserModelTest(TestCase):
 
     def test_is_superuser_default_to_False(self):
         self.assertEqual(self.user.is_superuser, False)
+
+    def test_get_numero_lote_e_incrementa(self):
+        numero_lote = self.user.get_numero_lote()
+        self.assertEqual(self.user.numero_lote_rps, numero_lote)

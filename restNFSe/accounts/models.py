@@ -53,3 +53,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return str(self).split(' ')[0]
+
+    def get_numero_lote(self):
+        self.numero_lote_rps = models.F('numero_lote_rps') + 1
+        self.save(update_fields=['numero_lote_rps'])
+        self.refresh_from_db()
+        return self.numero_lote_rps
