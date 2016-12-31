@@ -1,6 +1,7 @@
 from django.db import models
 
 from restNFSe.accounts.models import User
+from restNFSe.utils.to_dict import dict_lote_rps
 
 _help_natureza_operacao = '1 - Tributação no município, ' \
                           '2 - Tributação fora do município, ' \
@@ -83,6 +84,10 @@ class RPS(models.Model):
 
     def __str__(self):
         return str(self.numero)
+
+    def to_dict(self):
+        prestador = User.objects.get(id=self.prestador_id)
+        return dict_lote_rps(self, prestador)
 
     def save(self, *args, **kwargs):
         prestador = User.objects.get(id=self.prestador_id)

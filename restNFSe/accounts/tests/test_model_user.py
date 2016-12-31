@@ -41,3 +41,11 @@ class UserModelTest(TestCase):
     def test_get_numero_lote_e_incrementa(self):
         numero_lote = self.user.get_numero_lote()
         self.assertEqual(self.user.numero_lote_rps, numero_lote)
+
+    def test_to_dict(self):
+        prestador = self.user.__dict__
+        dict_expected = {
+            'cnpj': prestador['cnpj'],
+            'inscricao_municipal': prestador['inscricao_municipal']
+        }
+        self.assertEqual(self.user.to_dict(), dict_expected)

@@ -6,6 +6,7 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 
 from .managers import CustomUserManager
+from restNFSe.utils.to_dict import dict_prestador
 
 
 _cert_storage = FileSystemStorage(location=os.path.join(settings.BASE_DIR,
@@ -59,3 +60,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         self.save(update_fields=['numero_lote_rps'])
         self.refresh_from_db()
         return self.numero_lote_rps
+
+    def to_dict(self):
+        return dict_prestador(self)
