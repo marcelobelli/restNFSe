@@ -4,6 +4,7 @@ db.sqlite3
 *.pfx
 teste.json
 teste2.json
+staticfiles
 
 
 # Created by .ignore support plugin (hsz.mobi)
