@@ -1,0 +1,1 @@
+web: gunicorn restNFSe.wsgi --log-file -
