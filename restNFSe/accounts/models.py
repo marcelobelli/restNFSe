@@ -31,7 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                                        storage=_cert_storage, null=True, blank=True)
     senha_certificado = models.CharField('Senha Certificado', max_length=20, blank=True)
 
-    numero_lote_rps = models.IntegerField('Número Lote RPS', default=1)
+    numero_lote_rps = models.IntegerField('Número Lote RPS', default=0)
 
     is_staff = models.BooleanField('Equipe', default=False)
     is_active = models.BooleanField('Ativo', default=False)

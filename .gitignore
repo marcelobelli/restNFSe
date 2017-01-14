@@ -2,8 +2,7 @@
 db.sqlite3
 .idea
 *.pfx
-teste.json
-teste2.json
+teste*.json
 staticfiles
 
 

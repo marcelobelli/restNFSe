@@ -20,5 +20,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
-    url(r'^rps/', include('restNFSe.rps.urls')),
+    url(r'^rps/', include('restNFSe.rps.urls', namespace='rps')),
 ]

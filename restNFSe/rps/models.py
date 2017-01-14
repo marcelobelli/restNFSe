@@ -90,8 +90,9 @@ class RPS(models.Model):
         return dict_lote_rps(self, prestador)
 
     def save(self, *args, **kwargs):
-        prestador = User.objects.get(id=self.prestador_id)
-        self.numero_lote = prestador.get_numero_lote()
-        self.identificador_lote_rps = 'L{}'.format(self.numero_lote)
+        if self.id is None:
+            prestador = User.objects.get(id=self.prestador_id)
+            self.numero_lote = prestador.get_numero_lote()
+            self.identificador_lote_rps = 'L{}'.format(self.numero_lote)
 
         super(RPS, self).save(*args, **kwargs)
