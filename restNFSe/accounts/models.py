@@ -11,7 +11,7 @@ from restNFSe.utils.to_dict import dict_prestador
 
 _cert_storage = FileSystemStorage(location=os.path.join(settings.BASE_DIR,
                                                         'restNFSe',
-                                                        'account',
+                                                        'accounts',
                                                         'cert'))
 
 
